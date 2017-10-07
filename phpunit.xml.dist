@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./tests/bootstrap.php"
+         colors="true"
+         forceCoversAnnotation="true">
+
+    <php>
+        <server name="FCB_CLIENT_ID" value="YOUR_CLIENT_ID" />
+        <server name="FCB_CLIENT_SECRET" value="YOUR_CLIENT_SECRET" />
+        <server name="FCB_PARTNER_KEY" value="YOUR_PARTNER_KEY" />
+    </php>
+
+    <testsuites>
+        <testsuite>
+            <directory>tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <groups>
+        <exclude>
+            <group>todo</group>
+            <group>connect</group>
+        </exclude>
+    </groups>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src</directory>
+            <exclude>
+                <directory>src/</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
